@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'White Test Shirt',
       slug: 'white-test-shirt',
       category: 'shirts',
@@ -14,7 +14,7 @@ const data = {
       description: 'Okay quality shirts',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Black Test Shirt',
       slug: 'black-test-shirt',
       category: 'shirts',
@@ -27,7 +27,7 @@ const data = {
       description: 'High quality shirts',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Swag-X Shorts',
       slug: 'swag-x-pants',
       category: 'pants',
@@ -40,7 +40,7 @@ const data = {
       description: 'Good shorts',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Yucky Orange PooPoo Pants',
       slug: 'orange-x-pants',
       category: 'pants',
