@@ -68,3 +68,4 @@ function HomeScreen() {
   );
 }
 export default HomeScreen;
+// onClick={addToCartHandler}

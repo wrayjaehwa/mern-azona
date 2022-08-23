@@ -24,7 +24,7 @@ export default function CartScreen() {
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
-            <MessageBox>
+            <MessageBox variant="warning">
               Cart is empty. <Link to="/">Back to store</Link>
             </MessageBox>
           ) : (
@@ -79,7 +79,7 @@ export default function CartScreen() {
                 <div className="d-grid">
                   <Button
                     type="button"
-                    variant="primary"
+                    variant="dark"
                     // onClick={checkoutHandler}
                     disabled={cartItems.length === 0}
                   >
