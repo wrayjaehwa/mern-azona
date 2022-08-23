@@ -1,3 +1,8 @@
+:root {
+  --grey: #2a2c2e;
+  --white: #ffffff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,8 +21,8 @@ main {
 }
 
 .btn-primary {
-  background-color: #f0c040;
-  color: black;
+  background-color: var(--grey);
+  color: var(--white);
 }
 
 .products {
@@ -27,7 +32,7 @@ main {
 }
 
 .rating span {
-  color: #ffc000;
+  color: var(--grey);
 }
 
 .product {
@@ -42,4 +47,8 @@ main {
 
 .product-info {
   padding: 1rem;
+}
+
+.img-large {
+  max-width: 100%;
 }
