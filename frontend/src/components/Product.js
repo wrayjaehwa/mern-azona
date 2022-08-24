@@ -5,6 +5,7 @@ import Rating from './Rating';
 import { useContext } from 'react';
 import { Store } from '../Store';
 import axios from 'axios';
+// import Badge from 'react-bootstrap/Badge';
 
 function Product(props) {
   const { product } = props;
@@ -40,9 +41,17 @@ function Product(props) {
         </Link>
         <Rating rating={product.rating} numReviews={product.numReviews} />
         <Card.Text>${product.price}</Card.Text>
-        <Button onClick={addToCartHandler} variant="dark">
-          Add to Cart
-        </Button>
+
+        {product.countInStock > 0 ? (
+          <Button onClick={addToCartHandler} variant="dark">
+            Add to Cart
+          </Button>
+        ) : (
+          <Button variant="danger" size="sm" disabled>
+            Out of Stock
+          </Button>
+          // <Badge bg="danger">Out of Stock</Badge>
+        )}
       </Card.Body>
     </Card>
   );
