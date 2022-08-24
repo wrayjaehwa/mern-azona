@@ -15,6 +15,9 @@ import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
+import SignupScreen from './screens/SignupScreen';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
@@ -38,7 +41,8 @@ function App() {
               <Nav className="justify-content-end">
                 <Link to="/cart" className="nav-link">
                   {/* Cart */}
-                  <i class="fa-solid fa-cart-shopping"></i>
+                  {/* <i class="fa-solid fa-cart-shopping"></i> */}
+                  <FontAwesomeIcon icon={faShoppingCart} />
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -78,6 +82,7 @@ function App() {
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/signup" element={<SignupScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
