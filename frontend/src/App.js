@@ -14,6 +14,8 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
+// import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -21,6 +23,7 @@ function App() {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('shippingAddress');
   };
   return (
     <BrowserRouter>
@@ -32,9 +35,10 @@ function App() {
               <LinkContainer to="/">
                 <Navbar.Brand>xwray</Navbar.Brand>
               </LinkContainer>
-              <Nav className="me-auto">
+              <Nav className="justify-content-end">
                 <Link to="/cart" className="nav-link">
-                  Cart
+                  {/* Cart */}
+                  <i class="fa-solid fa-cart-shopping"></i>
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -61,6 +65,7 @@ function App() {
                 ) : (
                   <Link className="nav-link" to="/signin">
                     Sign in
+                    {/* <i class="fa-solid fa-right-to-bracket"></i> */}
                   </Link>
                 )}
               </Nav>
@@ -73,6 +78,7 @@ function App() {
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
